@@ -1,0 +1,20 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+<h1>Calculate Carbon Footprint</h1>
+<form action="footprint" method="POST">
+	{% csrf_token %}
+
+	Enter eletric bill: <input type="text" name='electric_bill'><br><br>
+    Enter gas bill: <input type="text" name="gas_bill"><br><br>
+	Enter oil bill: <input type="text" name="oil_bill"><br><br>
+    Enter yearly car mileage: <input type="text" name="yearly_mileage"><br><br>
+ 	Enter number of flights taken past year (<=4 hours): <input type="text" name="flights_over_four_hours"><br><br>
+    Enter number of flights taken past year (>4 hours): <input type="text" name="flights_less_four_hours"><br><br>
+ 	Do you recycle newspaper? Y or N: <input type="text" name="recycle_newspaper"><br><br>
+    Do you recycle alumnimum and tin? Y or N: <input type="text" name="recycle_aluminum_tin"><br><br>
+    <input type="submit">
+ </form>
+
+ {% endblock %}
